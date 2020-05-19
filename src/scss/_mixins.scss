@@ -1,0 +1,48 @@
+@mixin telefono {
+    @media only screen and (min-width: #{$telefono}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media only screen and (min-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media only screen and (min-width: #{$desktop}) {
+        @content;
+    }
+}
+
+@mixin boton($color1, $color2, $color3) {
+    background-color: $color1;
+    display: block;
+    padding: 1rem;
+    color: $color2;
+    text-decoration: none;
+    font-weight: 400;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid $color1;
+    -webkit-box-shadow: 0px 13px 19px -10px rgba(0,0,0,0.4);
+    -moz-box-shadow: 0px 13px 19px -10px rgba(0,0,0,0.4);
+    box-shadow: 0px 13px 19px -10px rgba(0,0,0,0.4);
+    transition: all .5s ease-in-out;
+    &:hover {
+        cursor: pointer;
+        background-color: $color3;
+        border: 1px solid $color3;
+        color: $color1;
+    }
+}
+
+@mixin box-sizing($box-model) {
+    box-sizing: $box-model;
+}
+
+@mixin gradiente($color1, $color2) {
+    background: linear-gradient(to right, $color1 0%, $color2 100%);
+}
