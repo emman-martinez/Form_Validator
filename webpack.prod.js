@@ -25,17 +25,17 @@ module.exports = {
             },
             {
                 test: /\.css$/i,
-                exclude: /styles\.css$/i,
+                exclude: /index\.css$/i, 
                 use: [
                     'style-loader',
                     'css-loader'
                 ]
             },
             {
-                test: /styles\.css$/i,
+                test: /index\.css$/i,
                 use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader'
+                    MiniCssExtractPlugin.loader, 
+                    'css-loader' 
                 ]
             },
             {

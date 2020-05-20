@@ -5,7 +5,7 @@ const autoprefixer = require('gulp-autoprefixer');
 
 function css() {
     return gulp
-        .src('./scss/index.scss') 
+        .src('./scss/componentes.scss') 
         .pipe(autoprefixer({
             overrideBrowserslist: ['last 2 versions'],
             cascade: false
@@ -13,7 +13,7 @@ function css() {
         .pipe(sass({
             outputStyle: 'expanded', // nested, compact, compressed
         }))
-        .pipe(gulp.dest('./'));
+        .pipe(gulp.dest('./css'));
 }
 
 function watchFiles() {
@@ -22,4 +22,4 @@ function watchFiles() {
 
 // ***** Registrar Funciones como Tareas ***** //
 gulp.task('css', css);
-gulp.task('watch', watchFiles);
+gulp.task('watch', watchFiles);  
