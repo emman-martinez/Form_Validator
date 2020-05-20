@@ -1,4 +1,6 @@
-  html {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+html {
     @include box-sizing(border-box);
 }
 
@@ -10,4 +12,70 @@
 
 body {
     @include box-sizing(border-box);
+    background-color: #F9FAFB;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
 }  
+
+.container {
+    background-color: $claro;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    width: 400px;
+
+    .form {
+
+        padding: 30px 40px;
+        h2 {
+            text-align: center;
+            margin: 0 0 20px; // U R D L
+        }
+        .form-control {
+            margin-bottom: 10px;
+            padding-bottom: 20px;
+            position: relative;
+            label {
+                color: $oscuro;
+                display: block;
+                margin-bottom: 5px;
+            }
+            input {
+                border: 2px solid $intermedio;
+                border-radius: 4px;
+                display: block;
+                width: 100%;
+                padding: 10px;
+                font-size: 14px;
+                &:focus {
+                    outline: 0;
+                    border-color: $oscuro;
+                }
+            }
+            small {
+                color: $secundario;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                visibility: hidden;
+            }
+        }
+        .form-control.success input {
+            border-color: $primario;
+        }
+        .form-control.error input {
+            border-color: $secundario;
+        }
+        .form-control.error small {
+            visibility: visible;
+        }
+
+        button {
+            @include boton();
+        }
+    }
+    
+}
